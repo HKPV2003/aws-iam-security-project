@@ -1,0 +1,12 @@
+AWS Account
+│
+├── Admins
+│   └── admin-user
+│
+├── Developers
+│
+├── DevOps
+│
+├── Security
+│
+└── Interns
