@@ -21,6 +21,7 @@ Enabled on Root Account
 Successfully logged in using admin-user.
 
 
+
 ## Phase 2 - RBAC Design
 
 Groups Created:
@@ -38,3 +39,21 @@ Developers -> Application development team
 DevOps     -> Infrastructure team
 Security   -> Audit and compliance team
 Interns    -> Read-only access
+
+
+
+## Phase 3 - Custom IAM Policies
+
+Policies Created:
+
+- developers-policy.json
+- devops-policy.json
+- security-policy.json
+- interns-policy.json
+
+Purpose:
+
+Developers -> Limited application access
+DevOps -> Infrastructure management
+Security -> Audit and compliance access
+Interns -> Read-only access

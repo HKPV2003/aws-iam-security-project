@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SecurityAuditAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:Get*",
+        "iam:List*",
+        "cloudtrail:Get*",
+        "cloudtrail:Describe*",
+        "cloudtrail:List*",
+        "access-analyzer:List*",
+        "access-analyzer:Get*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
