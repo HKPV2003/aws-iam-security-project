@@ -1,12 +1,16 @@
 AWS Account
 │
 ├── Admins
-│   └── admin-user
+│   └── AdministratorAccess
 │
 ├── Developers
+│   └── DeveloperPolicy
 │
 ├── DevOps
+│   └── DevOpsPolicy
 │
 ├── Security
+│   └── SecurityPolicy
 │
 └── Interns
+    └── InternPolicy

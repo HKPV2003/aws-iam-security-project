@@ -57,3 +57,19 @@ Developers -> Limited application access
 DevOps -> Infrastructure management
 Security -> Audit and compliance access
 Interns -> Read-only access
+
+
+
+## Phase 4 - IAM Policies Created
+
+Policies:
+
+- DeveloperPolicy
+- DevOpsPolicy
+- SecurityPolicy
+- InternPolicy
+
+Created using custom JSON policies.
+
+Stored locally in:
+policies/
