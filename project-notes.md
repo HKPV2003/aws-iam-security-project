@@ -99,3 +99,24 @@ Developers -> DeveloperPolicy
 DevOps -> DevOpsPolicy
 Security -> SecurityPolicy
 Interns -> InternPolicy
+
+
+
+## Phase 6 - Permission Validation
+
+Least privilege successfully validated.
+
+Developer:
+- Allowed Start/Stop
+- Denied Terminate
+
+DevOps:
+- Infrastructure access granted
+
+Security:
+- Audit access granted
+- Resource creation denied
+
+Intern:
+- Read-only access granted
+- Resource creation denied

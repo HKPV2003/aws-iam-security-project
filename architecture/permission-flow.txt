@@ -1,0 +1,22 @@
+Developer
+  └── DeveloperPolicy
+        ├── Start EC2
+        ├── Stop EC2
+        └── Deny Terminate
+
+DevOps
+  └── DevOpsPolicy
+        ├── Manage EC2
+        ├── Manage S3
+        └── Manage CloudWatch
+
+Security
+  └── SecurityPolicy
+        ├── View IAM
+        ├── View CloudTrail
+        └── Deny Resource Creation
+
+Intern
+  └── InternPolicy
+        ├── Read Access
+        └── Deny Resource Creation
