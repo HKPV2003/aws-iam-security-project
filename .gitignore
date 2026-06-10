@@ -1,1 +1,7 @@
+*.csv
+*.pem
+*.key
+*.secret
+*.credentials
+*.Zone.Identifier
 *.Zone.Identifier
