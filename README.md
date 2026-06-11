@@ -2,67 +2,69 @@
 
 ## Overview
 
-This project demonstrates the implementation of Role-Based Access Control (RBAC) in AWS Identity and Access Management (IAM) using custom IAM policies, IAM groups, users, and permission validation.
+This project demonstrates the implementation of Role-Based Access Control (RBAC) in AWS Identity and Access Management (IAM) using custom IAM policies, IAM groups, users, and permission validation testing.
 
-The objective was to design a secure AWS account structure following the Principle of Least Privilege while validating access controls through real-world testing.
+The objective was to design a secure AWS account structure following the Principle of Least Privilege while validating access controls through real-world testing scenarios.
 
 ---
 
 ## Architecture
 
+```text
 AWS Account
 │
 ├── Admins
-│ └── admin-user
-│ └── AdministratorAccess
+│   └── admin-user
+│       └── AdministratorAccess
 │
 ├── Developers
-│ └── dev-user1
-│ └── DeveloperPolicy
+│   └── dev-user1
+│       └── DeveloperPolicy
 │
 ├── DevOps
-│ └── devops-user1
-│ └── DevOpsPolicy
+│   └── devops-user1
+│       └── DevOpsPolicy
 │
 ├── Security
-│ └── security-user1
-│ └── SecurityPolicy
+│   └── security-user1
+│       └── SecurityPolicy
 │
 └── Interns
-└── intern-user1
-└── InternPolicy
+    └── intern-user1
+        └── InternPolicy
+```
 
 ---
 
 ## Technologies Used
 
-- AWS IAM
-- AWS EC2
-- AWS S3
-- AWS CloudWatch
-- Git
-- GitHub
-- Linux (WSL Ubuntu)
+* AWS IAM
+* AWS EC2
+* AWS S3
+* AWS CloudWatch
+* Git
+* GitHub
+* Linux (WSL Ubuntu)
 
 ---
 
 ## IAM Groups Created
 
-- Admins
-- Developers
-- DevOps
-- Security
-- Interns
+* Admins
+* Developers
+* DevOps
+* Security
+* Interns
 
 ---
 
 ## IAM Users Created
 
-- admin-user
-- dev-user1
-- devops-user1
-- security-user1
-- intern-user1
+* admin-user
+* dev-user1
+* devops-user1
+* security-user1
+* intern-user1
 
 ---
 
@@ -70,188 +72,64 @@ AWS Account
 
 ### DeveloperPolicy
 
-Permissions:
+**Permissions**
 
-- View EC2
-- Start EC2
-- Stop EC2
-- Access S3
-- Access CloudWatch
+* View EC2 resources
+* Start EC2 instances
+* Stop EC2 instances
+* Access S3 buckets
+* Access CloudWatch
 
-Restrictions:
+**Restrictions**
 
-- Cannot terminate EC2 instances
+* Cannot terminate EC2 instances
+
+---
 
 ### DevOpsPolicy
 
-Permissions:
+**Permissions**
 
-- Manage EC2
-- Manage S3
-- Access CloudWatch
+* Manage EC2 resources
+* Manage S3 resources
+* Access CloudWatch
+
+---
 
 ### SecurityPolicy
 
-Permissions:
+**Permissions**
 
-- View IAM
-- View CloudTrail
-- Perform audits
+* View IAM resources
+* View CloudTrail logs
+* Perform security audits
 
-Restrictions:
+**Restrictions**
 
-- Cannot create infrastructure resources
+* Cannot create infrastructure resources
+
+---
 
 ### InternPolicy
 
-Permissions:
+**Permissions**
 
-- Read-only access
+* Read-only access to resources
 
-Restrictions:
+**Restrictions**
 
-- Cannot modify resources
+* Cannot create, modify, or delete resources
 
 ---
 
 ## Security Features Implemented
 
-- Role-Based Access Control (RBAC)
-- Principle of Least Privilege
-- IAM Groups
-- Custom IAM Policies
-- Permission Validation Testing
-- MFA Enabled
-
----
-
-## Permission Validation Results
-
-### Developer
-# AWS IAM Security Project
-
-## Overview
-
-This project demonstrates the implementation of Role-Based Access Control (RBAC) in AWS Identity and Access Management (IAM) using custom IAM policies, IAM groups, users, and permission validation.
-
-The objective was to design a secure AWS account structure following the Principle of Least Privilege while validating access controls through real-world testing.
-
----
-
-## Architecture
-
-AWS Account
-│
-├── Admins
-│ └── admin-user
-│ └── AdministratorAccess
-│
-├── Developers
-│ └── dev-user1
-│ └── DeveloperPolicy
-│
-├── DevOps
-│ └── devops-user1
-│ └── DevOpsPolicy
-│
-├── Security
-│ └── security-user1
-│ └── SecurityPolicy
-│
-└── Interns
-└── intern-user1
-└── InternPolicy
-
----
-
-## Technologies Used
-
-- AWS IAM
-- AWS EC2
-- AWS S3
-- AWS CloudWatch
-- Git
-- GitHub
-- Linux (WSL Ubuntu)
-
----
-
-## IAM Groups Created
-
-- Admins
-- Developers
-- DevOps
-- Security
-- Interns
-
----
-
-## IAM Users Created
-
-- admin-user
-- dev-user1
-- devops-user1
-- security-user1
-- intern-user1
-
----
-
-## Custom Policies
-
-### DeveloperPolicy
-
-Permissions:
-
-- View EC2
-- Start EC2
-- Stop EC2
-- Access S3
-- Access CloudWatch
-
-Restrictions:
-
-- Cannot terminate EC2 instances
-
-### DevOpsPolicy
-
-Permissions:
-
-- Manage EC2
-- Manage S3
-- Access CloudWatch
-
-### SecurityPolicy
-
-Permissions:
-
-- View IAM
-- View CloudTrail
-- Perform audits
-
-Restrictions:
-
-- Cannot create infrastructure resources
-
-### InternPolicy
-
-Permissions:
-
-- Read-only access
-
-Restrictions:
-
-- Cannot modify resources
-
----
-
-## Security Features Implemented
-
-- Role-Based Access Control (RBAC)
-- Principle of Least Privilege
-- IAM Groups
-- Custom IAM Policies
-- Permission Validation Testing
-- MFA Enabled
+* Role-Based Access Control (RBAC)
+* Principle of Least Privilege
+* IAM Groups
+* Custom IAM Policies
+* Multi-Factor Authentication (MFA)
+* Permission Validation Testing
 
 ---
 
@@ -259,73 +137,90 @@ Restrictions:
 
 ### Developer
 
-- View EC2: PASS
-- Start EC2: PASS
-- Stop EC2: PASS
-- Terminate EC2: DENIED
+* View EC2: PASS
+* Start EC2: PASS
+* Stop EC2: PASS
+* Terminate EC2: DENIED
 
 ### DevOps
 
-- Manage EC2: PASS
-- Manage S3: PASS
+* Manage EC2: PASS
+* Manage S3: PASS
 
 ### Security
 
-- View IAM: PASS
-- Launch EC2: DENIED
+* View IAM: PASS
+* Launch EC2: DENIED
 
 ### Intern
 
-- View EC2: PASS
-- Launch EC2: DENIED
+* View EC2: PASS
+* Launch EC2: DENIED
+
+---
+
+## Project Screenshots
+
+The `screenshots/` folder contains evidence of:
+
+* IAM Group Creation
+* IAM User Creation
+* Custom Policy Creation
+* Policy Attachments
+* RBAC Design
+* Permission Validation Testing
+* Architecture Documentation
+
+---
+
+## Project Duration
+
+Completed in 3 days.
+
+---
+
+## Key Learning Outcomes
+
+* AWS IAM Administration
+* RBAC Implementation
+* Principle of Least Privilege
+* IAM Policy Design
+* Security Best Practices
+* Permission Validation Testing
+* MFA Configuration
+* Git & GitHub Documentation
 
 ---
 
 ## Project Outcomes
 
-- Implemented secure AWS IAM architecture
-- Designed custom least-privilege policies
-- Validated permissions through real-world testing
-- Documented architecture and security controls
-- Maintained project using Git and GitHub
+* Implemented secure AWS IAM architecture
+* Designed custom least-privilege policies
+* Validated permissions through real-world testing
+* Documented architecture and security controls
+* Maintained project using Git and GitHub
+* Improved understanding of AWS security fundamentals
+
+---
+
+## Repository Structure
+
+```text
+aws-iam-security-project
+├── architecture/
+├── policies/
+├── screenshots/
+├── testing/
+├── README.md
+├── project-notes.md
+└── project-summary.md
+```
 
 ---
 
 ## Author
 
-Harikrishna P V
-- View EC2: PASS
-- Start EC2: PASS
-- Stop EC2: PASS
-- Terminate EC2: DENIED
+**Harikrishna P V**
 
-### DevOps
+Cloud & DevOps Learner | AWS | Linux | Docker | GitHub
 
-- Manage EC2: PASS
-- Manage S3: PASS
-
-### Security
-
-- View IAM: PASS
-- Launch EC2: DENIED
-
-### Intern
-
-- View EC2: PASS
-- Launch EC2: DENIED
-
----
-
-## Project Outcomes
-
-- Implemented secure AWS IAM architecture
-- Designed custom least-privilege policies
-- Validated permissions through real-world testing
-- Documented architecture and security controls
-- Maintained project using Git and GitHub
-
----
-
-## Author
-
-Harikrishna P V
